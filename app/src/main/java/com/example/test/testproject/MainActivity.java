@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
             sun;//太阳
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         sun = findViewById(R.id.sun);
 
         Button btnPlay = findViewById(R.id.btn_play);
+        Button btnPause = findViewById(R.id.btn_pause);
+        Button btnResume = findViewById(R.id.btn_resume);
 
         initViewAnim();
 
@@ -70,6 +70,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        btnPause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (animatorSet.isStarted() || animatorSet.isRunning())
+                    animatorSet.pause();
+            }
+        });
+
+        btnResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (animatorSet.isPaused())
+                    animatorSet.resume();
+            }
+        });
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (animatorSet.isStarted() || animatorSet.isRunning())
+            animatorSet.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (animatorSet.isPaused())
+            animatorSet.resume();
     }
 
     AnimatorSet animatorSet;
@@ -267,6 +298,7 @@ public class MainActivity extends AppCompatActivity {
 
     /*---- 树木（旋转、平移） 动画集合 ----*/
     private AnimationSet treeAnimSet, treeTwoAnimSet;
+
     /**
      * 初始化View动画
      */
