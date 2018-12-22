@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <ImageView
+        android:id="@+id/ring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:src="@mipmap/web_loading_ring"
+        app:layout_constraintBottom_toBottomOf="@id/building"
+        app:layout_constraintEnd_toEndOf="@+id/building"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@+id/building" />
+
+    <ImageView
+        android:id="@+id/light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:src="@mipmap/web_loading_light"
+        app:layout_constraintEnd_toEndOf="@+id/ring"
+        app:layout_constraintStart_toStartOf="@+id/ring"
+        app:layout_constraintTop_toBottomOf="@+id/building" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="227dp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/ring" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="227dp"
+        android:background="#ffffff"
+        app:layout_constraintTop_toBottomOf="@+id/building" />
+
+    <ImageView
+        android:id="@+id/ufo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="180dp"
+        android:alpha="0"
+        android:src="@mipmap/web_loading_ufo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ring"
+        app:layout_constraintStart_toStartOf="@+id/ring"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/building"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/web_loading_building"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bicycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/building"
+        android:src="@mipmap/web_loading_bicycle"
+        app:layout_constraintBottom_toBottomOf="@id/building"
+        app:layout_constraintEnd_toEndOf="@+id/ring"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="@+id/ring" />
+
+    <ImageView
+        android:id="@+id/tree_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/web_loading_tree"
+        app:layout_constraintBottom_toBottomOf="@id/building"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="@+id/bicycle"
+        app:layout_constraintRight_toRightOf="@id/ring" />
+
+    <ImageView
+        android:id="@+id/tree_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/web_loading_tree"
+        app:layout_constraintBottom_toBottomOf="@id/building"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintLeft_toRightOf="@+id/tree_one"
+        app:layout_constraintRight_toRightOf="@id/ring" />
+
+    <ImageView
+        android:id="@+id/sun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/web_loading_sun"
+        app:layout_constraintBottom_toTopOf="@id/building"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintLeft_toRightOf="@id/tree_one"
+        app:layout_constraintRight_toRightOf="@id/building"
+        app:layout_constraintTop_toBottomOf="@id/ufo" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="170dp"
+        android:layout_height="3dp"
+        android:background="#FF8080"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/building" />
+
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:text="播放" />
+</android.support.constraint.ConstraintLayout>
